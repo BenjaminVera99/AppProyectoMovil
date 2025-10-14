@@ -7,7 +7,11 @@ sealed class AppRoute (val route: String) {
 
     data object Settings : AppRoute("SettingsPage")
 
-
+    data class Detail(val itemId: String) : AppRoute("detail_page/{itemId}") {
+        fun buildRoute(): String {
+            return route.replace("{itemId}", itemId)
+        }
+    }
 
 
 

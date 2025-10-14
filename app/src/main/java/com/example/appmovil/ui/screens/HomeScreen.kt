@@ -25,18 +25,17 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.appmovil.navigation.AppRoute
-import com.example.appmovil.viewmodel.MainViewModel
-import com.example.appmovil.viewmodel.ViewModel
+import com.example.appmovil.viewmodels.MainViewModel
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-
 fun HomeScreen(
     navController: NavController,
-    viewModel: MainViewModel = ViewModel()
+    viewModel: MainViewModel = viewModel()
 ){
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope ()
@@ -80,7 +79,7 @@ fun HomeScreen(
             ){
                 Text("Bienvenido a la Pagina de Inicio")
                 Spacer(modifier = Modifier.height(16.dp))
-                Button(onClick = {viewModel.navigateTo() }) {
+                Button(onClick = {viewModel.navigateTo(AppRoute.Settings) }) {
                     Text("Ir a Configuracion")
                 }
             }

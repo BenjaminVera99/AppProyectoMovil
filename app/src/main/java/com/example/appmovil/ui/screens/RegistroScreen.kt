@@ -21,7 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import com.example.appmovil.navigation.NavEvent
-import com.example.appmovil.viewmodel.UsuarioViewModel
+import com.example.appmovil.viewmodels.UsuarioViewModel
 
 @Composable
 fun RegistroScreen(

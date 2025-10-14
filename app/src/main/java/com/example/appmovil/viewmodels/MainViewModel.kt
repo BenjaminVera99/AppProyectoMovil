@@ -1,4 +1,4 @@
-package com.example.appmovil.viewmodel
+package com.example.appmovil.viewmodels
 
 import com.example.appmovil.navigation.AppRoute
 import com.example.appmovil.navigation.NavEvent
