@@ -20,12 +20,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.appmovil.navigation.NavEvent
 import com.example.appmovil.viewmodels.UsuarioViewModel
 
 @Composable
 fun RegistroScreen(
-    navEvent: NavEvent,
+    navController: NavController,
     viewModel: UsuarioViewModel
 ) {
     val estado by viewModel.estado.collectAsState()
@@ -107,7 +108,7 @@ fun RegistroScreen(
         Button(
             onClick = {
                 if (viewModel.ValidarFormulario()){
-                    navEvent.navigate("resumen")
+                    navController.navigate("resumen")
                 }
             },
             modifier = Modifier.fillMaxWidth()
